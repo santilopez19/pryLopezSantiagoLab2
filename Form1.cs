@@ -14,10 +14,7 @@ namespace pryLopezSantiagoLab2
     public partial class frmGrilla : Form
     {
         string[,] MatDGV = new string[10, 3];
-        int filaActual = 1;
-        string Nombre = "Nombre";
-        string Sector = "Sector";
-        string DNI = "DNI";
+        int i = 1;
         public frmGrilla()
         {
             InitializeComponent();
@@ -26,7 +23,6 @@ namespace pryLopezSantiagoLab2
         {
             
         }
-
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             string Nombre = txtNombre.Text;
@@ -36,22 +32,17 @@ namespace pryLopezSantiagoLab2
             // Verificar que la caja de texto no esté vacía
             if (!string.IsNullOrWhiteSpace(Nombre)&& !string.IsNullOrWhiteSpace(Sector) && !string.IsNullOrWhiteSpace(Sector))
             {
-                // Guardar el valor en la matriz en la posición [0, 0]
-                dgvInformacion.Rows[0].Cells[0].Value = Nombre;
-                dgvInformacion.Rows[0].Cells[1].Value = Sector;
-                dgvInformacion.Rows[0].Cells[2].Value = DNI;
-
-                MatDGV[0, 0] = Nombre;
-                MatDGV[0, 1] = Sector;
-                MatDGV[0, 2] = Dni;
+                MatDGV[i, 0] = Nombre;
+                MatDGV[i, 1] = Sector;
+                MatDGV[i, 2] = Dni;
+                dgvInformacion.Rows[i].Cells[0].Value=MatDGV[i,0];             
+                dgvInformacion.Rows[i].Cells[1].Value=MatDGV[i, 1];
+                dgvInformacion.Rows[i].Cells[2].Value=MatDGV[i, 2];
+                i++;
                 txtNombre.Text = "";
                 txtSector.Text = "";
                 txtDni.Text = "";
-                dgvInformacion.Rows[filaActual].Cells[0].Value=MatDGV[filaActual,0];
-                dgvInformacion.Rows[filaActual].Cells[1].Value=MatDGV[filaActual, 1];
-                dgvInformacion.Rows[filaActual].Cells[2].Value=MatDGV[filaActual, 2];
-                filaActual++;
-                if (filaActual >= 10)
+                if (i >= 10)
                 {
                     MessageBox.Show("No hay mas espacio.");
                 }
