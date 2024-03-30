@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGrilla));
             this.dgvInformacion = new System.Windows.Forms.DataGridView();
             this.txtDni = new System.Windows.Forms.TextBox();
             this.txtSector = new System.Windows.Forms.TextBox();
@@ -46,7 +47,7 @@
             this.dgvInformacion.Name = "dgvInformacion";
             this.dgvInformacion.RowHeadersWidth = 51;
             this.dgvInformacion.RowTemplate.Height = 24;
-            this.dgvInformacion.Size = new System.Drawing.Size(490, 380);
+            this.dgvInformacion.Size = new System.Drawing.Size(471, 380);
             this.dgvInformacion.TabIndex = 0;
             // 
             // txtDni
@@ -115,7 +116,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(769, 439);
             this.Controls.Add(this.lblDni);
             this.Controls.Add(this.lblSector);
             this.Controls.Add(this.lblNombre);
@@ -125,6 +126,7 @@
             this.Controls.Add(this.txtDni);
             this.Controls.Add(this.dgvInformacion);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmGrilla";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Grilla de Datos";
